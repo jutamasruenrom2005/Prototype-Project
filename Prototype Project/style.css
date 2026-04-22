@@ -1,0 +1,1069 @@
+body {
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background: #f5f5f5;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+p, li, a {
+  font-weight: 400;
+}
+
+
+.navbar {
+  font-size: 19px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* 🔴 Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 82px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px; /* 🔥 ลด padding */
+  z-index: 9999;
+}
+
+.logo img {
+  height: 127px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.menu li {
+  color: #a80000;
+  cursor: pointer;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #a80000;
+}
+
+.menu li a:hover {
+  opacity: 0.7;
+}
+
+/* 🔴 Hero */
+.hero-slider {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.hero h1 {
+  font-weight: 600;
+}
+
+.btn-detail {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #a80000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.slides {
+  display: flex;
+  transition: 0.5s;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* overlay มืด */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* content */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+}
+
+/* ปุ่มเลื่อน */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.195);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* 🔴 Search */
+.search-section {
+  width: 100%;
+  margin: 0 auto;       /* 🔥 เอาช่องว่างด้านบนออก */
+  margin-top: 0px;    /* 🔥 ดันขึ้นไปชน carousel */
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 0px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.search-section h2 {
+  text-align: center;
+  color: #a80000;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;  /* 🔥 จัดกลางทั้งชุด */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-box input {
+  width: 80%;   /* 🔥 ปรับให้พอดี */
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-box button {
+  background: #a80000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+/* filters */
+.filters {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filters div {
+  display: flex;
+  flex-direction: column;
+  width: 230px; /* 🔥 ทำให้เท่ากัน */
+}
+
+.filters label {
+  color: #a80000;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.filters input,
+.filters select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* 🔴 Activities */
+.activities {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 50px 60px; /* 🔥 เพิ่ม padding เหมือน search */
+  background: #f5f5f5;
+  text-align: center; /* 🔥 ทำให้หัวอยู่กลางจริง */
+  color: #a80000;
+}
+
+.activitiess h2 {
+  text-align: center;
+  color: #a80000;
+  margin-bottom: 50px; /* 🔥 ลดจาก 80 ให้บาลานซ์ */
+  font-size: 28px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 55px;
+  text-align: left; /* 🔥 กันไม่ให้การ์ดกลาง */
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #888;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column; /* 🔥 สำคัญ */
+  height: 100%;
+}
+
+.card > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* icon เล็ก */
+.icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.card-content {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* 🔥 คุมระยะทั้งหมด */
+}
+
+.card-content h3,
+.card-content p {
+  margin: 0;
+}
+
+.card button {
+  margin-top: auto;    /* 🔥 ชิดขอบล่างการ์ด */
+  padding: 12px;
+  width: 100%;
+  background: #a80000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.view-all {
+  width: 100%;              /* 🔥 เต็มหน้าจอ */
+  display: flex;
+  justify-content: center;  /* 🔥 กลางแน่นอน */
+  margin: 60px 0 30px;
+}
+
+.view-all button {
+  padding: 15px 50px;
+  background: #a80000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 🔴 Footer */
+footer {
+  margin-top: 0px;
+  background: #a80000;
+  color: white;
+  padding: 30px;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  max-width: 60%;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons a {
+  color: white;          /* 🔥 ทำให้เป็นสีขาว */
+  text-decoration: none; /* 🔥 เอาขีดเส้นใต้ทิ้ง */
+}
+
+/* hover สวยๆ */
+.social-icons i:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+body {
+  background: #f3f3f3; /* 🔥 ทำให้เหมือน UI จริง */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* จอกลาง = 2 */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr; /* มือถือ = 1 */
+  }
+}
+
+/* dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* กล่อง dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  display: none; /* 🔥 ซ่อนก่อน */
+}
+
+/* แต่ละ item */
+.dropdown-menu li {
+  padding: 10px 15px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* hover item */
+.dropdown-menu li:hover {
+  background: #f5f5f5;
+}
+
+/* แสดง dropdown ตอน hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .menu {
+    display: none !;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .hero-slider {
+    height: 260px;
+    margin-top: 60px;
+  }
+
+  .slide img {
+    height: 260px;
+  }
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 5 px 8;
+  }
+
+  .hero-content {
+    left: 15px;
+    right: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 12 px;
+  }
+
+  .btn-detail {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .search-section {
+    padding: 20px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filters div {
+    width: 100%;
+  }
+
+  .activities {
+    padding: 30px 20px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+  }
+
+  .card > img {
+    height: 180px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* หน้ากิจกรรมทั้งหมด */
+
+.container {
+  width: 100%;
+  padding: 0;
+}
+
+/* 🔴 แถบแดง */
+.page-header {
+  background: #a80000;
+  color: white;
+  padding: 50px 80px;
+
+  margin-top: 80px;   /* ✅ ให้พอดีกับ navbar */
+  width: 100%;        /* ✅ เต็มจอ */
+}
+
+/* 🔴 Activities */
+.activitiess {
+  width: 90%;
+  margin: 50px auto;
+  background: #f9f9f9;
+  border-radius: 20px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.page-header p {
+  font-size: 19px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.activity-info {
+  width: 90%;
+  margin: 80px auto 0px;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* หน้ารายละเอียดกิจกรรม */
+
+body {
+  background: white; /* 🔥 เปลี่ยนจากเทา */
+}
+
+.separator {
+  margin: 0 8px; /* 🔥 ซ้าย-ขวาเท่ากัน */
+}
+
+.separator {
+  color: #aaa;
+}
+
+/* แถบหน้าหลัก > ...*/
+.breadcrumb {
+  padding: 12px 60px;
+  background: #f7f7f7;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #a80000;
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  color: #a80000;
+  font-weight: 500;
+}
+
+.separator {
+  margin: 0 8px;
+  color: #aaa;
+}
+
+/* 🔴 Detail Hero */
+.detail-hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 80px;
+}
+
+/* 🔴 Container */
+.detail-container {
+  display: flex;
+  flex-direction: column; /* 🔥 ตัวนี้สำคัญ */
+}
+
+/* 🔙 ปุ่มกลับ */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #a80000;
+  text-decoration: none;
+}
+
+/* 🔴 Title */
+.detail-container h1 {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* 🔴 meta */
+.detail-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.detail-meta i {
+  margin-right: 8px;
+  color: #a80000;
+}
+
+/* 🔴 text */
+.detail-text {
+  line-height: 1.7;
+  color: #444;
+}
+
+/* breadcrumb */
+.breadcrumb {
+  margin-top: 80px; /* กัน navbar */
+  background: #f3f3f3;
+  padding: 12px 60px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* title */
+.detail-title {
+  padding: 0 60px;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+/* รูป */
+.detail-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.detail-images img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.image-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0; /* 🔥 เอาขอบออก */
+  margin: 0px;  /* 🔥 ใช้ margin แทน */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.image-slider img:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.image-slider img {
+  width: 915px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 0px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* ซ่อน scrollbar ให้ดูคลีน */
+.image-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.top-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 60px;
+  background: white;
+}
+
+.top-images img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* กล่องข้อมูล */
+.detail-box {
+  border-left: 4px solid #8b2c2c;
+  padding: 15px 20px;
+  margin-top: 10px;
+}
+
+.detail-box p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* รายละเอียด */
+.detail-text {
+  padding: 20px 60px;
+  line-height: 1.7;
+}
+
+.info-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px 60px;
+  background: white;
+  align-items: start;
+}
+
+.detail-info {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.related-box {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.related-box h1 {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.related-box a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #a80000;
+  text-decoration: none;
+}
+
+.info-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.info-item i {
+  color: #a80000;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.label {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.detail-text {
+  padding: 0px 60px;
+  background: white;
+  max-width: 1200px;
+}
+
+.detail-text-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 60px;
+}
+
+.detail-text h2 {
+  color: #a80000;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.detail-text p {
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+/* 🔥 ไฮไลต์ชื่อคน */
+.highlight {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.hashtag {
+  margin-top: 20px;
+  color: #a80000;
+  font-weight: 500;
+}
+
+/* 🔗 เครดิต */
+.credit {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.credit a {
+  color: #a80000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+/* 🔥 ปุ่ม < > */
+.slider-wrapper {
+  position: relative;
+  margin: 0 60px;
+}
+
+/* 🔥 ปุ่ม */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(66, 65, 65, 0.412);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5%;
+  z-index: 0;
+}
+
+/* hover */
+.slide-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/*   กิจกรรม ที่เกี่ยวข้อง */
+.related-activities {
+  padding: 30px 60px;
+  background: #fff;
+}
+
+.related-activities h2 {
+  color: #a80000;
+  margin-bottom: 25px;
+}
+
+.related-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.related-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.related-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.related-card button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #a80000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.related-card button:hover {
+  background: #800000;
+}
+
+.leader-list {
+  margin: 10px 0 15px 20px;
+  color: #333;
+}
+
+.leader-list li {
+  margin-bottom: 5px;
+}
+
+/* ไม่พบกิจกรรม */
+.no-result {
+  text-align: center;
+  padding: 100px 20px;
+  color: #444;
+}
+
+.no-result i {
+  font-size: 70px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.no-result h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.no-result p {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #a80000, #d40000);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+
+  .breadcrumb {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .detail-title {
+    padding: 0 15px;
+    font-size: 20px;
+  }
+
+  .top-images {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .detail-info {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-text {
+    padding: 15px;
+  }
+
+  .related-container {
+    grid-template-columns: 1fr;
+  }
+
+}
