@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Staff</title>
+  <link rel="stylesheet" href="staff-dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- 🔴 TOPBAR -->
+<div class="topbar">
+  <div class="left">
+    <button class="menu-btn" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <img src="images/KUSE_Logo.png" class="logo">
+  </div>
+
+<div class="right">
+  <i class="fa-solid fa-bell"></i>
+  <span>เจ้าหน้าที่</span>
+
+  <div class="profile-icon">
+    <i class="fa-solid fa-user"></i>
+  </div>
+</div>
+</div>
+
+<!-- 🔴 SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <ul>
+<li class="active" onclick="go('staff-dashboard.html')">
+  <i class="fa-solid fa-chart-line"></i> 
+  <span>แดชบอร์ด</span>
+</li>
+
+<li onclick="go('manage-event-activities.html')">
+  <i class="fa-solid fa-calendar"></i> 
+  <span>จัดการข้อมูลกิจกรรม</span>
+</li>
+
+<li onclick="go('manage-location.html')">
+  <i class="fa-solid fa-location-dot"></i> 
+  <span>จัดการสถานที่</span>
+</li>
+
+  <div class="logout" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i> <span>ออกจากระบบ</span>
+  </div>
+
+</div>
+
+<!-- 🔴 MAIN -->
+<div class="main" id="main">
+
+  <h2>แดชบอร์ด</h2>
+  <p class="sub">ภาพรวมกิจกรรมของภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ</p>
+
+  <!-- 🔥 CARDS -->
+  <div class="cards">
+    <div class="card red">
+      <p>กิจกรรมทั้งหมด</p>
+      <h3>2</h3>
+    </div>
+
+    <div class="card green">
+      <p>เผยแพร่แล้ว</p>
+      <h3>1</h3>
+    </div>
+
+    <div class="card yellow">
+      <p>รอเผยแพร่</p>
+      <h3>1</h3>
+    </div>
+
+    <div class="card blue">
+      <p>สถานที่</p>
+      <h3>2</h3>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+  <button onclick="go('manage-event-activities.html')">+ เพิ่มกิจกรรม</button>
+  <button onclick="go('manage-location.html')">+ เพิ่มสถานที่</button>
+</div>
+
+  <!-- 🔥 TABLE -->
+  <div class="table-section">
+    <h3>กิจกรรมล่าสุด</h3>
+
+    <table>
+      <tr>
+        <th>ชื่อกิจกรรม</th>
+        <th>วันที่</th>
+        <th>สถานะ</th>
+      </tr>
+
+      <tr>
+        <td>ค่ายผู้นำเทคโนโลยี (Tech Leader Camp)</td>
+        <td>31 มกราคม - 1 กุมภาพันธ์ 2569</td>
+        <td class="status green">เผยแพร่</td>
+      </tr>
+
+      <tr>
+        <td>จัดนิทรรศการแนะแนวและประชาสัมพันธ์การรับสมัครเข้าศึกษาต่อ ในงาน Open House</td>
+        <td>5 มีนาคม 2569</td>
+        <td class="status yellow">รอเผยแพร่</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 🔥 CHART -->
+<div class="chart-container">
+
+  <div class="chart-section">
+    <h3>สถิติกิจกรรมรายเดือน</h3>
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <div class="chart-section">
+    <h3>สถานะกิจกรรม</h3>
+    <canvas id="donutChart"></canvas>
+  </div>
+
+</div>
+
+  <div class="todo">
+  <h3>สิ่งที่ต้องดำเนินการ</h3>
+  <ul>
+    <li>📌 มีกิจกรรมรอเผยแพร่ 1 รายการ</li>
+    <li>🔧 มีสถานที่ปิดปรับปรุง 0 แห่ง</li>
+  </ul>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="staff-dashboard.js"></script>
+
+</body>
+</html>

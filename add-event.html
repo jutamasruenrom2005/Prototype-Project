@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เพิ่มกิจกรรม</title>
+  <link rel="stylesheet" href="add-event.css">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- 🔴 TOPBAR -->
+<div class="topbar">
+  <div class="left">
+    <button onclick="history.back()">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <h3>เพิ่มกิจกรรม</h3>
+  </div>
+</div>
+
+<!-- 🔴 MAIN -->
+<div class="main">
+
+  <div class="form-box">
+
+    <!-- 🔥 ข้อมูลกิจกรรม -->
+    <h3>ข้อมูลกิจกรรม</h3>
+
+    <div class="form-grid">
+
+      <div>
+        <label>ชื่อกิจกรรม *</label>
+        <input type="text" id="title">
+      </div>
+
+      <div>
+        <label>วันที่เผยแพร่ *</label>
+        <input type="date" id="date">
+      </div>
+
+      <div>
+        <label>สถานที่ / อาคาร *</label>
+        <input type="text" id="location">
+      </div>
+
+      <div>
+        <label>หน่วยงาน *</label>
+        <select id="department">
+          <option>ภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ</option>
+          <option>ฝ่ายวิชาการ</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- 🔥 รายละเอียด -->
+    <h3>รายละเอียด</h3>
+
+    <textarea id="detail" placeholder="รายละเอียดกิจกรรม..."></textarea>
+
+    <!-- 🔥 อัปโหลดรูป -->
+    <h3>รูปภาพกิจกรรม</h3>
+
+    <div class="upload-box" onclick="uploadClick()">
+      <i class="fa-solid fa-camera"></i>
+      <p>อัปโหลดรูป</p>
+      <input type="file" id="file" hidden>
+    </div>
+
+    <!-- 🔥 สถานะ -->
+    <div class="status-box">
+      <label><input type="radio" name="status" value="publish" checked> เผยแพร่</label>
+      <label><input type="radio" name="status" value="draft"> รอเผยแพร่</label>
+    </div>
+
+    <!-- 🔥 ปุ่ม -->
+    <div class="actions">
+      <button class="cancel" onclick="history.back()">ยกเลิก</button>
+      <button class="save" onclick="saveEvent()">บันทึกข้อมูล</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="add-event.js"></script>
+</body>
+</html>
